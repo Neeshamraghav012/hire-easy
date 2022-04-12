@@ -68,6 +68,10 @@ DATABASES = {}
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
+WHITENOISE_USE_FINDERS = True
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 """
 
 DATABASES = {
