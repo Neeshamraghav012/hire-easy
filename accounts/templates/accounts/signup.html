@@ -1,0 +1,114 @@
+{% extends "accounts/base.html" %}
+
+{% load static %}
+{% block title %}
+Sign up
+{% endblock title %}
+{% block main %}
+{% block script %}
+
+    
+
+<style type="text/css">
+
+    body {
+
+      background-image: linear-gradient(to right, #C0D5ED, #9DE3FC);
+
+
+    }
+
+    .filled-button {
+        background-color: transparent;
+        color: #fff;
+        background-color: #515148;
+        border: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 12px 30px;
+        border-radius: 30px;
+        display: inline-block;
+        transition: all 0.3s;
+        outline: none;
+        box-shadow: none;
+        text-shadow: none;
+        cursor: pointer;
+    }
+       
+    .filled-button:hover {
+        background-color: #23B5B5;
+        color: white;
+    }
+
+        
+</style>
+
+{% endblock %}
+
+{% for msg in messages %}
+   
+  <p class="text-success text-center" id = "msg-container">{{msg}}</p>
+            
+{% endfor %}
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light" action="{% url 'accounts:register' %}" method="post">
+
+
+        {% csrf_token %}
+
+        {{form}}
+
+        <!--<div class="form-floating mb-3">
+          <input type="username" name="username" class="form-control" id="floatingInput" placeholder="username" required>
+          <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" name = "email" class="form-control" id="floatingPassword" placeholder="email" required>
+          <label for="floatingPassword">Email</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="password" name = "pass1" class="form-control" id="floatingPassword" placeholder="password" required>
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="password" name = "pass2" class="form-control" id="floatingPassword" placeholder="confirm password" required>
+          <label for="floatingPassword">Confirm Password</label>
+        </div>-->
+
+        <button class="w-100 filled-button mt-3" type="submit">Sign up</button>
+        <hr class="my-4">
+
+        <small class="text-muted">Already Registered?<a href="{% url 'accounts:login' %}"> Sign in</a></small>
+      </form>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+    
+
+{% endblock %}
+
+{% block ajaxbox %}
+
+    <script>
+
+        const ele = document.getElementById("msg-container")
+        setTimeout(function(){
+
+            ele.style.display = "none";
+            },
+         3000);
+    </script>
+{% endblock %}
