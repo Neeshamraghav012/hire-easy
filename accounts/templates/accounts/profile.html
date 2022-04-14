@@ -8,7 +8,7 @@ Sign in
 {% block script %}
 
     
-<link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+
 <style type="text/css">
 
 
@@ -18,6 +18,10 @@ Sign in
 
 
     }
+
+
+
+
 
     .filled-button {
         background-color: transparent;
@@ -58,28 +62,32 @@ Sign in
     {% endfor %}
 
 
+    <div id="particles-js">
+        
 
-            <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-              <div class="row align-items-center g-lg-5 py-5">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
 
                 <div class="col-md-10 mx-auto col-lg-5">
 
-                <form class="p-4 p-md-5 border rounded-3 bg-light" action="{% url 'profile' %}" method="post" enctype='multipart/form-data'>
+                    <form class="p-4 p-md-5 border rounded-3 bg-light" action="{% url 'profile' %}" method="post" enctype='multipart/form-data'>
 
 
-                    {% csrf_token %}
+                        {% csrf_token %}
 
-                    {{ profile_form }}
+                        {{ profile_form }}
 
-                    <button class="w-100 filled-button mt-3" type="submit">Submit</button>
-                    <hr class="my-4">
+                        <button class="w-100 filled-button mt-3" type="submit">Submit</button>
+                        <hr class="my-4">
 
-                </form>
+                    </form>
+                </div>
+
             </div>
 
         </div>
-
-    </div>
+            
+    </div> 
 
 
 
