@@ -75,7 +75,6 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 
 WHITENOISE_USE_FINDERS = True
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 """
 
@@ -112,6 +111,9 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'Mfe-P8X-IM77Y9jXKbKbSpxk91M',
 
 }
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
