@@ -46,7 +46,9 @@ def profile(request):
 	else:
 
 		profile_form = ProfileForm()
-	
+		submissions = JobProfile.objects.filter(user = request.user)
+		if submissions:
+			messages.success(request, "Your latest Submission will be reviewed by our team.")
 		return render(request, "accounts/profile.html", {"profile_form": profile_form})
 					
 
