@@ -20,6 +20,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
 
     'whitenoise.runserver_nostatic',
+    'jazzmin',
     'cloudinary_storage',
     'cloudinary',
     'django.contrib.admin',
@@ -30,7 +31,70 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'resume',
+
 ]
+
+
+JAZZMIN_SETTINGS = {
+
+    "site_title": "Hire Easi Admin",
+
+    "site_header": "Hire Easi",
+
+    "site_brand": "Hire Easi",
+
+    "site_logo": None,
+
+    "site_logo_classes": None,
+
+    "site_icon": None,
+
+    "welcome_sign": "Welcome to the Hire Easi Admin",
+
+    "copyright": "Hire Easi",
+
+    "search_model": "auth.User",
+
+    "user_avatar": None,
+
+    "show_sidebar": True,
+
+    "navigation_expanded": True,
+
+    "hide_apps": [],
+
+    "hide_models": [],
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+    },
+
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+
+
+    "related_modal_active": False,
+
+    "custom_css": None,
+    "custom_js": None,
+
+    "show_ui_builder": False,
+
+
+    "changeform_format": "horizontal_tabs",
+
+    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
+
+}
+
+JAZZMIN_UI_TWEAKS = {
+
+    "theme": "simplex",
+}
+
+SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,8 +148,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
 
+"""
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

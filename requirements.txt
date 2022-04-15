@@ -15,7 +15,7 @@ cloudinary
 django-cloudinary-storage
 dj-database-url
 Django==3.2.9
-
+django-jazzmin
 django-heroku
 
 docutils
