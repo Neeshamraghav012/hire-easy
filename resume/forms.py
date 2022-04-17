@@ -55,5 +55,5 @@ class ProfileForm(forms.Form):
 	github = forms.CharField(max_length = 1000, required = False, label = "Github Profile(Optional)", widget = forms.TextInput(attrs = {'class': 'form-control m-2', 'placeholder': 'Enter LinkedIn Profile'}))
 	other_profiles = forms.CharField(max_length = 1000, required = False, label = "Other Profiles(Optional)", widget = forms.TextInput(attrs = {'class': 'form-control m-2', 'placeholder': 'Enter Other Profiles'}))
 
-	interest = forms.ChoiceField(choices = INTERSET_CHOICES, widget = forms.Select(attrs = {'class': 'form-control m-2', 'placeholder': 'Enter Password'}))
-	experiance = forms.ChoiceField(choices = EXPERIANCE_CHOICES, widget = forms.Select(attrs = {'class': 'form-control m-2', 'placeholder': 'Enter Password'}))
+	interest = forms.MultipleChoiceField(choices = INTERSET_CHOICES, widget = forms.SelectMultiple(attrs = {'class': 'form-control m-2'}))
+	experiance = forms.ChoiceField(choices = EXPERIANCE_CHOICES, widget = forms.Select(attrs = {'class': 'form-control m-2'}))
